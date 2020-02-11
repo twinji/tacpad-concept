@@ -1,0 +1,121 @@
+body {
+    --theme-color: crimson;
+    --tint-color: rgba(90, 200, 214, 0.1);
+    --secondary-tint-color: rgba(90, 200, 214, 0.2);
+    --border-radius: 30px;
+    background-color: cadetblue;
+    background: linear-gradient(to bottom right, black, rgb(0, 23, 34));
+    background: url("https://w-dog.net/wallpapers/3/0/425759900317939/space-dark-space-planet-outlines-surface-light-space-darkness-planet-outlines-surface-light.jpg");
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: century gothic;
+    color: white;
+}
+
+.wave-background {
+    background: linear-gradient(
+        to top, 
+        transparent, transparent, transparent, transparent, transparent, transparent, 
+        transparent, transparent, transparent, transparent, transparent, transparent,
+        var(--tint-color), 
+        transparent, transparent, transparent, transparent, transparent, transparent, 
+        transparent, transparent, transparent, transparent, transparent, transparent
+    );
+    background-size: 250%;
+    animation-name: wave-vertical;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+div.main-container {
+    margin: auto auto;
+    height: 100vh;
+    width: 100vw;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    line-height: 80px;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+nav > button {
+    /*box-sizing: border-box;*/
+    color: rgba(90, 200, 214, 0.75);
+    background-color: var(--secondary-tint-color);
+    box-shadow: inset 0 0 0 transparent;
+    padding: 0px 30px;
+    font-size: 28px;
+    flex-basis: 33.15%;
+    text-align: center;
+    transition: 0.3s all ease;
+    border: none;
+    font-family: inherit;
+    border-bottom: 2px solid rgba(90, 200, 214, 0.75);
+}
+
+nav > button:hover { 
+    box-shadow: inset 0 -80px 0 var(--theme-color);
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 4px solid white;
+    animation-name: nav-button-hover;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+}
+
+div.container {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), var(--tint-color));
+    width: 100%;
+    flex: 1;
+    margin: auto auto;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom: 2px solid rgba(90, 200, 214, 0.75);
+    
+}
+
+@keyframes nav-button-hover {
+    0% {
+        letter-spacing: normal;
+        border-bottom: 0 solid transparent;
+    } 
+    15% {
+        letter-spacing: 4px;
+        border-bottom: 15px solid white;
+        
+    }
+    100% {
+        letter-spacing: normal;
+        border-bottom: 4px solid white;
+    }
+}
+
+@keyframes wave-vertical {
+    0% {
+        background-position: bottom;
+    } 
+    40% {
+        background-position: bottom;
+    }
+    60% {
+        background-position: top;
+    }
+    100% {
+        background-position: top;
+    }
+}
